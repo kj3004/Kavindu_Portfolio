@@ -173,6 +173,21 @@ button:hover {
   color: var(--secondary-color);
 }
 
+/* Gradient Background for Sections */
+.about-section,
+.experience-section,
+.education-section,
+.skills-section,
+.contact-section {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  color: white;
+  padding: 4rem 2rem;
+}
+
 /* Theme Toggle Button */
 .theme-toggle {
   position: fixed;
@@ -190,4 +205,66 @@ button:hover {
 
 .theme-toggle:hover {
   background: var(--secondary-color);
+}
+/* Animation Styles */
+motion.div {
+  width: 100%;
+}
+
+.card {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Home Section with Background Image */
+.home-section {
+  background-image: url("../public/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+}
+
+.home-content {
+  background: rgba(0, 0, 0, 0.6); /* Semi-transparent overlay */
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+/* Profile Picture */
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 4px solid var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+/* Project Images */
+.project-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+  margin-bottom: 1rem;
+}
+
+/* Hover Effects */
+button:hover {
+  background: var(--secondary-color);
+  transform: scale(1.05);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
