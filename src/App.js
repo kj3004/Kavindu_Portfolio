@@ -1,23 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Navbar from "./components/Navbar";
+import Home from "./components/Home";
+import About from "./components/About";
+import Experience from "./components/Experience";
+import Education from "./components/Education";
+import Skills from "./components/Skills";
+import Contact from "./components/Contact";
+import { FaSun, FaMoon } from "react-icons/fa";
+import "./App.css";
 
 function App() {
+  const [theme, setTheme] = useState("dark");
+
+  const toggleTheme = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+    document.documentElement.setAttribute(
+      "data-theme",
+      theme === "dark" ? "light" : "dark"
+    );
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <Home />
+      <About />
+      <Experience />
+      <Education />
+      <Skills />
+      <Contact />
+      <button className="theme-toggle" onClick={toggleTheme}>
+        {theme === "dark" ? <FaSun /> : <FaMoon />}
+      </button>
     </div>
   );
 }
